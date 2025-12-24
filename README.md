@@ -244,7 +244,3 @@ Trading cryptocurrencies involves risk. Always do your own research.
 
 ---
 
-**Created with ❤️ for the AsterDEX Community**  
-**为AsterDEX社区用心打造**
-
-Last Updated / 最后更新: 2025-12-23
