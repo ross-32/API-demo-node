@@ -1,0 +1,29 @@
+# Dependencies / 依赖
+node_modules/
+package-lock.json
+
+# Environment variables / 环境变量
+.env
+
+# Logs / 日志
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE / 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Temporary files / 临时文件
+*.tmp
+*.temp
+.cache/
+
+# Build output / 构建输出
+dist/
+build/

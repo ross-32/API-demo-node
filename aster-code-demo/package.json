@@ -1,0 +1,24 @@
+{
+  "name": "aster-builder-code-demo",
+  "version": "1.0.0",
+  "description": "Aster Builder Code Mode Pro-API Demo with EIP-712 Signer/Agent / Aster Builder Code 模式 Pro-API 演示（EIP-712 Signer/Agent）",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Run any example file with: node <filename>.js\""
+  },
+  "keywords": [
+    "aster",
+    "builder",
+    "eip-712",
+    "web3",
+    "crypto",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.11.1"
+  }
+}

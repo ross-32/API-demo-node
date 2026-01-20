@@ -17,12 +17,12 @@ const { signParams, buildQueryString } = require('./utils');
  * Parameters / 参数
  */
 const params = {
-    symbol: 'BNBUSDT',          // Trading pair / 交易对 (required / 必需)
+    symbol: 'ASTERUSDT',          // Trading pair / 交易对 (required / 必需)
     side: 'BUY',                // Order side / 订单方向 (required / 必需): BUY or SELL
-    type: 'LIMIT',              // Order type / 订单类型 (required / 必需): LIMIT, MARKET, STOP_LOSS, STOP_LOSS_LIMIT, TAKE_PROFIT, TAKE_PROFIT_LIMIT
-    quantity: '0.1',            // Order quantity / 订单数量 (required / 必需)
-    price: '300',               // Order price / 订单价格 (required for LIMIT orders / LIMIT订单必需)
-    timeInForce: 'GTC',         // Time in force / 有效方式: GTC, IOC, FOK (required for LIMIT orders / LIMIT订单必需)
+    type: 'MARKET',              // Order type / 订单类型 (required / 必需): LIMIT, MARKET, STOP_LOSS, STOP_LOSS_LIMIT, TAKE_PROFIT, TAKE_PROFIT_LIMIT
+    quantity: '200',            // Order quantity / 订单数量 (required / 必需)
+    // price: '300',               // Order price / 订单价格 (required for LIMIT orders / LIMIT订单必需)
+    // timeInForce: 'GTC',         // Time in force / 有效方式: GTC, IOC, FOK (required for LIMIT orders / LIMIT订单必需)
     // newClientOrderId: 'my_order_123',  // Custom order ID / 自定义订单ID (optional / 可选)
     // stopPrice: '305',        // Stop price / 触发价格 (required for STOP orders / STOP订单必需)
     // icebergQty: '0.05',      // Iceberg quantity / 冰山订单数量 (optional / 可选)
