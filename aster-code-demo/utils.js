@@ -1,12 +1,48 @@
 /**
- * Aster Builder Code Utility Functions / Aster Builder Code 工具函数
+ * Aster Builder Code Utility Functions & Configuration / Aster Builder Code 工具函数与配置
  * 
- * Contains EIP-712 signing logic, nonce generation, and request building
- * 包含 EIP-712 签名逻辑、nonce 生成和请求构建
+ * Contains EIP-712 signing logic, nonce generation, request building, and configuration
+ * 包含 EIP-712 签名逻辑、nonce 生成、请求构建和配置管理
  */
 
 const { ethers } = require('ethers');
-const config = require('./config');
+require('dotenv').config();
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// Configuration / 配置
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const config = {
+    HOST: process.env.HOST || 'http://10.100.7.198:9081',
+    USER_ADDRESS: process.env.USER_ADDRESS || '0x9FdC25AE9dE3791ECb122959ff196d600d5aDDA4',
+    MAIN_PRIVATE_KEY: process.env.MAIN_PRIVATE_KEY || '',
+    SIGNER_ADDRESS: process.env.SIGNER_ADDRESS || '0x34b208e2674f120343B541e4C75C9035EbF8f5c4',
+    SIGNER_PRIVATE_KEY: process.env.SIGNER_PRIVATE_KEY || '',
+    BUILDER_ADDRESS: process.env.BUILDER_ADDRESS || '0xc2af13e1B1de3A015252A115309A0F9DEEDCFa0A',
+    BUILDER_NAME: process.env.BUILDER_NAME || 'ivan',
+    MAX_FEE_RATE: process.env.MAX_FEE_RATE || '0.00001',
+    FEE_RATE: process.env.FEE_RATE || '0.00001',
+    AGENT_NAME: process.env.AGENT_NAME || '2dkkd0001',
+    IP_WHITELIST: process.env.IP_WHITELIST,
+    AGENT_EXPIRED: parseInt(process.env.AGENT_EXPIRED || '1867945395040'),
+    CHAIN_ID: parseInt(process.env.CHAIN_ID || '56'),
+    ASTER_CHAIN: process.env.ASTER_CHAIN || 'Testnet',
+    
+    // EIP-712 Domain for main=True / 用于 main=True 的 EIP-712 域
+    EIP712_DOMAIN: {
+        name: 'AsterSignTransaction',
+        version: '1',
+        chainId: 56,
+        verifyingContract: '0x0000000000000000000000000000000000000000'
+    },
+    
+    // EIP-712 Domain for main=False / 用于 main=False 的 EIP-712 域
+    EIP712_DOMAIN_MESSAGE: {
+        name: 'AsterSignTransaction',
+        version: '1',
+        chainId: 714,
+        verifyingContract: '0x0000000000000000000000000000000000000000'
+    }
+};
 
 // Nonce state / Nonce 状态
 let _lastMs = 0;
@@ -156,6 +192,7 @@ async function signEIP712Message(privateKey, message) {
 }
 
 module.exports = {
+    config,
     getNonce,
     buildQueryString,
     capitalizeKeys,

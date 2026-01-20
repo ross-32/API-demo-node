@@ -10,8 +10,7 @@
  */
 
 const axios = require('axios');
-const config = require('./config');
-const { getNonce, buildQueryString, signEIP712Message } = require('./utils');
+const { config, getNonce, buildQueryString, signEIP712Message } = require('./utils');
 
 async function placeOrder() {
     try {

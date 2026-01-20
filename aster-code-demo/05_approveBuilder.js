@@ -7,8 +7,7 @@
  */
 
 const axios = require('axios');
-const config = require('./config');
-const { getNonce, buildQueryString, signEIP712Main } = require('./utils');
+const { config, getNonce, buildQueryString, signEIP712Main } = require('./utils');
 
 async function approveBuilder() {
     try {
